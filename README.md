@@ -10,6 +10,15 @@ https://github.com/akash-dutta-au7/Bitcoin-price-notofication.git
 (click on the "clone or download" button on your left --> download ZIP)
 ```
 
+## Help
+```
+optional arguments:
+  -h, --help            show this help message and exit
+  -i interval, --interval interval
+                        Time interval in minutes
+  -t threshold, --threshold threshold
+                        Threshold in USD
+```
 ## Run
 
 ```
