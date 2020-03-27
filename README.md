@@ -6,6 +6,8 @@ Python program to get bitcoin notification
 ```
 Download the file from the following url :-
 https://github.com/akash-dutta-au7/Bitcoin-price-notofication.git
+
+(click on the "clone or download" button on your left --> download ZIP)
 ```
 
 ## Run
