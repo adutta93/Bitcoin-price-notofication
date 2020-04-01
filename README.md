@@ -39,4 +39,14 @@ https://t.me/BTC_Price_check
 (Now Join this telegram channel to get the notification)
 ```
 
+## Video Guide
+
+```
+Watch this video for better understanding:
+
+Link---> https://drive.google.com/open?id=1RQWYarmdyMU7Hy1qdsmki_wXrylL-t_n
+
+```
+
+
 

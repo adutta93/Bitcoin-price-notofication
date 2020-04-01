@@ -7,6 +7,7 @@ from datetime import datetime
 
 ifttt_webhook_url = 'https://maker.ifttt.com/trigger/{}/with/key/lSXPvLmR9wRpiKsSHgcAQKFT94jeJXgQv5DlKMmv-VF'
 
+
 # function to get the bitcoin price
 def get_latest_bitcoin_price():
 
@@ -24,9 +25,9 @@ def get_latest_bitcoin_price():
 
     try:
         response = session.get(url)
-       # getting the json data
+    # getting the json data
         data = json.loads(response.text)
-       # return data
+    # return data
     except (ConnectionError, Timeout, TooManyRedirects) as e:
         print(e)
     print("BTC Price", float(data['data'][0]['quote']['USD']['price']))
@@ -43,6 +44,7 @@ def post_ifttt_webhook(event, value):
     requests.post(ifttt_event_url, json=data)
     print("IFTTT", ifttt_event_url)
 
+
 def format_bitcoin_history(bitcoin_history):
     rows = []
     for bit_price in bitcoin_history:
@@ -57,6 +59,7 @@ def format_bitcoin_history(bitcoin_history):
         # Use a <br> (break) tag to create a new line
         # Join the rows delimited by <br> tag: row1<br>row2<br>row3
     return '<br>'.join(rows)
+
 
 def run (bitcoin_threshold, time_gap):
     bitcoin_history = []
@@ -73,7 +76,7 @@ def run (bitcoin_threshold, time_gap):
 
         # Send a Telegram notification
         # Once we have 5 items in our bitcoin_history send an update
-        if len(bitcoin_history) == 5:
+        if len(bitcoin_history) == 1:
             post_ifttt_webhook('Bitcoin_Price_Update',
                                format_bitcoin_history(bitcoin_history))
             # Reset the history
@@ -96,6 +99,7 @@ def main():
     print('Running Application with time interval of ',  new_args.interval[0], ' and threshold = $',  new_args.threshold[0])
     # calls the run function
     run(new_args.threshold,  new_args.interval)
+
 
 if __name__ == '__main__':
     main()
